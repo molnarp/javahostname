@@ -1,4 +1,4 @@
-AC_INIT([amhello], [1.0], [bug-automake@gnu.org])
+AC_INIT([javahostname], [1.0], [mp6633@gmail.com])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_PROG_CC
 AC_CONFIG_HEADERS([config.h])

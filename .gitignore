@@ -1,0 +1,17 @@
+/.idea/
+Makefile
+Makefile.in
+aclocal.m4
+/autom4te.cache/
+/compile
+/config.h*
+/config.log
+/config.status
+/configure
+/depcomp
+/install-sh
+/missing
+.deps/
+/src/javahostname
+/src/*.o
+/stamp-h1

@@ -1,1 +1,36 @@
-README
+# javahostname
+
+**Prints the local hostname as Java would resolve it on Linux.**
+
+This program simulates how the local hostname is resolved in the OpenJDK Java 8 runtime,
+as outlined below.
+
+1. resolve local hostname with gethostname(2)
+2. resolve ip address belonging to the hostname you got in step 1 with getaddrinfo(7)
+3. resolve canonical hostname for the ip address with getnameinfo (3)
+
+# Installation
+
+1. generate build scripts (used autoconf 2.69)
+```
+$ autoreconf --install
+```
+
+2. configure and build
+```
+$ ./configure
+$ make
+```
+
+3. run program
+```
+$ src/javahostname
+```
+
+# Further reading
+
+```
+man 2 gethostname
+man 3 getaddrinfo
+man 7 getnameinfo
+```

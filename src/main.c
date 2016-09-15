@@ -24,8 +24,17 @@ int main() {
 
     if (error == 0) {
         char addr_str[res->ai_addrlen];
-        inet_ntop(res->ai_family, res->ai_addr, addr_str, res->ai_addrlen);
-        printf("IP address: %s\n", addr_str);
+        if (res->ai_family == AF_INET) {
+            struct sockaddr_in *addr4;
+            addr4 = (struct sockaddr_in *) res->ai_addr;
+            inet_ntop(res->ai_family, &addr4->sin_addr, addr_str, res->ai_addrlen);
+        }
+        else if (res->ai_family == AF_INET6) {
+            struct sockaddr_in6 *addr6;
+            addr6 = (struct sockaddr_in6 *) res->ai_addr;
+            inet_ntop(res->ai_family, &addr6->sin6_addr, addr_str, res->ai_addrlen);
+        }
+        printf("ip address: %s\n", addr_str);
 
         /* host is known to name service */
         error = getnameinfo(res->ai_addr,
@@ -41,6 +50,6 @@ int main() {
 
         freeaddrinfo(res);
 
-        printf("Final hostname: %s\n", hostname);
+        printf("resolved hostname: %s\n", hostname);
     }
 }

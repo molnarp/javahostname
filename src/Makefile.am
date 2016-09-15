@@ -1,2 +1,2 @@
 bin_PROGRAMS = javahostname
-linuxhostname_SOURCES = main.c
+javahostname_SOURCES = main.c
