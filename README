@@ -6,8 +6,8 @@ This program simulates how the local hostname is resolved in the OpenJDK Java 8 
 as outlined below.
 
 1. resolve local hostname with gethostname(2)
-2. resolve ip address belonging to the hostname you got in step 1 with getaddrinfo(7)
-3. resolve canonical hostname for the ip address with getnameinfo (3)
+2. resolve ip address belonging to the hostname you got in step 1 with getaddrinfo(3)
+3. resolve canonical hostname for the ip address with getnameinfo(3)
 
 # Installation
 
@@ -32,5 +32,5 @@ $ src/javahostname
 ```
 man 2 gethostname
 man 3 getaddrinfo
-man 7 getnameinfo
+man 3 getnameinfo
 ```
